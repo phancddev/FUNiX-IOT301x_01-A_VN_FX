@@ -1,0 +1,236 @@
+- Biến có thể được thay đổi giá trị
+- Kiểu dữ liệu:
+    + Integer (int): Số nguyên, có kích thước là 4 byte
+    VD: int x;
+    + Character (char): Ký tự, có kích thước là 1 byte. Có thể thao tác như 1 số nguyên theo bảng ASCII.
+                        Mỗi ký tự chỉ biểu diễn trong phạm vi 8 bit
+    VD: char c
+    + Float (float): số thực, độ chính xác đơn, có kích thước 4 byte
+    VD: float y 
+    + Double (double): số thực, độ chính xác kép, có kích thước 8 byte
+    VD: double z
+    + Enum: liệt kê tất cả các giá trị trong khi khai báo. Lưu ý là giá trị của kiểu liệt kê được tính thành số nguyên.
+    VD: 
+    enum month {Jan, Feb, Mar, Apr = 10, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+    enum month thisMonth;
+    thisMonth = Sep;
+    printf("%d \n", thisMonth);
+
+- Thêm long vào trước 1 kiểu dữ liệu để gấp đôi kích thước. 
+- Thêm short vào trước 1 kiểu dữ liệu để chia 2 kích thước
+- Chỉ dùng cho int, double
+VD: long double x
+
+- Muốn có số nguyên dương thì thêm unsigned vào trước, giá trị >=0
+
+- int, char, float,... là kiểu dữ liệu
+- x, x1, x2, y, z... là biến
+
+- Kiểu định dạng thường dùng:
+    + c: hiển thị ký tự
+    + d/i : số nguyên hệ thập phân có dấu
+    + f: số thực dấu chấm động hệ thập phân, mặc định 6 chữ số sau dấu chấm
+    + g: số thực dấu chấm động hệ thập phân.
+    + s: Chuỗi ký tự
+    + u: Số nguyên hệ thập phân không dấu
+    + ld: số nguyên hệ thập phân có dấu 8 byte.
+    + Lf: Long double.
+    + .<số ký số>f: ghi phần thập phân đến số
+
+- Có thể vừa khai báo vừa gán giá trị, VD như int g = 1
+- Toán tử 3 ngôi: <biến> = <điều kiện> ? < biểu thức 1> : <biểu thức 2>;
+- Dịch trái 1 là x2, dịch phải 1 là chia 2
+
+# /*---------------------------------------------------
+# |                         Mảng                       |
+# ---------------------------------------------------*/
+
+- Khai báo 1 mảng: <kieu du lieu> ten[<kich thuoc mang>];
+- Ví dụ: khai bảo mảng a gồm 100 phần tử kiểu integer: int a[100];
+- Để truy nhập phần tử của mảng, ta có thể có 2 cách:
+    + Cách 1: a[i], ví dụ a[9] là mình truy nhâp phần tử số 10 của mảng vì index bắt đầu từ 0 => vậy mảng trên, có các phần tử: 0-99
+    + Cách 2: Dùng pointer, '*(a + i) , ví dụ '*(a+9) thì cũng tương đương a[9]
+
+- Ví dụ bạn cần sắp xếp 10 số integer, nhập từ bàn phím
+    + Trước tiên bạn cần có 1 mảng arr[10]; để lưu trữ các số trên
+    + Sau đó mới sắp xếp các giá trị trong mảng đó
+
+- Nếu chương trình chỉ yêu cầu sắp xếp 5 số integer thì ta có thể làm:
+    + Ta có thể làm: int a1, a2, a3, a4, a5;
+
+- Tuy nhiên, nếu đề bài yêu cầu sắp xếp 100 phần tử thì không thể khai báo kiểu trên được, mà phải dùng int a[100]; 
+
+- Nên dùng kiểu khai báo <kieu du lieu> ten[<kich thuoc mang>];
+
+- Liệt kê tất các hàm xử lý chuỗi, cách sử dụng, chức năng
+* VD: islower,...
+ 
+Hàm strcat() 
+- Dùng để nối 2 chuỗi với nhau
+- Format: strcat(str1, str2);
+Hàm strchr() 
+- Dùng để tìm kiếm ký tự trong chuỗi, trong đó chr có thể là 1 biến hay hằng
+- VD: 
+    char str1[] = "Ha Noi";
+    char chr = 'a';
+    if (strchr(str1, chr) !=NULL) {
+        printf("\n %c co xuat hien trong chuoi &s \n", chr, str1);
+    }
+    else {
+        printf("\n %c khong xuat hien trong chuoi &s \n", chr, str);
+    }
+
+*Ask mentors | Hàm strcmp()
+- Dùng để so sánh 2 chuỗi với nhau
+- So sánh theo bảng mã ASCII
+- Được dùng để sắp xếp các chuỗi theo chiều tăng/giảm dần
+- Hàm sẽ trả về 1 số là hiệu của 2 ký tự cuối cùng đem so sánh
+- Hàm strcmp(s1,s2) trả về giá trị như sau:
+    + Một số âm nếu s1<s2
+    + Số 0 nếu s1 = s2
+    + Một số dương nếu s1>s2
+
+Hàm strcpy() 
+- Dùng để gán chuỗi cho chuỗi
+- Format: strcpy(dest, src);
+Hàm strlen()
+- Dùng để lấy kích thước của chuỗi
+- VD: char str [] = "nguyennt"
+      for(int i = 0; i<strlen(str); i++) {
+          printf("%c * ", str[i]);
+      }
+      return 0;
+    => n * g * u * y * e * n * n * t 
+
+
+Hàm strncat()
+- Nối n ký tự của chuỗi sau vào chuỗi trước
+- Cú pháp: strncat(s1, s2, n)
+Hàm strncpy()
+- Gán n ký tự đầu tiên của chuỗi s2 cho n ký tự đầu tiên của chuỗi s1
+- Format: strncpy(s1, s2, n);
+    + VD:   char s1[] = "abcd", s2[]= "1234";
+            strncpy(s1, s2, 2);
+            puts(s1); // Kết quả của s1 là 12cd
+
+Hàm strstr() 
+- Dùng để tìm kiếm chuỗi trong chuỗi
+- Format: strstr(Chuỗi1, Chuỗi2) // Tìm chuỗi2 trong chuỗi 1
+- Nếu Chuỗi2 không có trong Chuỗi1 thì hàm trả về giá trị NULL, ngược lại hàm sẽ trả về 1 chuỗi bắt đầu từ vị trí đầu tiên tìm thấy Chuỗi2 cho đến hết Chuỗi1
+- VD: 
+    char str1[] = "abcdefghi", s2[] = "cdf";
+    strstr(s1, s2);
+    => Hàm trả kết quả cdefghi
+
+    strstr(filestr, pattern); // Tra ve dia chi cua pattern trong filestr.
+Hàm strrev()
+- Dùng để đảo ngược trật tự của chuỗi
+- Trả về kết quả là chuỗi đã đảo ngược
+- VD: strrev(nguyennt.dev) sẽ trả về kết quả ved.tnneyugn :D
+
+*Ask mentors | Hàm islower()
+- Kiểm tra xem ký tự có phải là chữ thường hay không, nếu là chữ cái thường trả về 1, ngược lại trả về 0
+- VD:   int islower (int c);
+
+*Ask mentors | Hàm isupper ()
+- Kiểm tra xem ký tự có phải là chữ hoa hay không, nếu là chữ hoa trả về 1, ngược lại trả về 0
+- VD:   int islower (int c);
+
+strtok()
+
+Viết thêm dấu ngoặc nháy thì tự thêm NULL
+
+&y là địa chỉ của y
+
+* + địa chỉ = giá trị địa chỉ đó
+
+fun(arr) => tên của mảng arr cũng là con trỏ
+
+Tăng địa chỉ => tăng qua phần tử tiếp theo
+
+%p: in giá trị của con trỏ
+
+hàm puts() => in ra màn hình
+hàm free() => xoá cấp phát bộ nhớ
+
+Tổng hợp kiến thức
+
+1. Tổng quan về lập trình C
+
+Hiểu được cách một chương trình máy tính hoạt động.
+Hiểu về lịch sử phát triển và ứng dụng của ngôn ngữ lập trình C.
+Hiểu được các tính năng, ưu nhược điểm của ngôn ngữ lập trình C với các ngôn ngữ lập trình khác.
+Bốn bước của việc triển khai một chương trình C: editing, compiling, linking, executing.
+2. Cài đặt phần mềm và chạy chương trình đầu tiên
+
+Phần mềm Code::Blocks - Môi trường tích hợp phát triển (IDE) là phần mềm dùng để viết chương trình C và gỡ lỗi.
+Trình biên dịch Compiler (Cygwin) dùng để biên dịch mã nguồn thành mã thực thi để máy tính hiểu và chạy được.
+Cấu trúc của một chương trình C bao gồm: các lệnh tiền xử lý #include, hàm main (bắt buộc phải có), các lệnh bên trong hoặc ngoài hàm main và các dòng comment câu lệnh.
+3.. Một số khái niệm cơ bản
+
+Comment dùng để chú thích các đoạn code phức tạp hoặc giá trị Input/Output của hàm khi lập trình.
+Tiền xử lý là những chỉ thị cung cấp cho trình biên dịch để xử lý những thông tin trước khi bắt đầu quá trình biên dịch.
+Câu lệnh #include dùng để thêm thư viện trong lập trình C.
+Hiển thị kết quả ra màn hình và nhập dữ liệu từ bàn phím bằng câu lệnh printf và scanf.
+4. Biến và kiểu dữ liệu
+Kích thước của các kiểu dữ liệu trong lập trình C, lưu ý kiểu dữ có dấu, không dấu và số phẩy động.
+Khai báo và sử dụng biến toàn cục và biến địa phương trong chương trình.
+Khai báo và sử dụng kiểu liệt kê enum.
+Các kiểu định dạng trong hàm printf như %d, %f, %c ...
+Đối số command line arguments trong hàm main.
+4. Toán tử
+
+Các loại toán tử cơ bản trong C bao gồm toán tử một ngôi, hai ngôi, toán tử trên bit, toán tử logic, toán tử quan hệ. Và một loại toán tử cũng rất quan trọng liên quan đến biến dùng để gán giá trị đó là toán tử gán.
+Chú ý đến mức độ ưu tiên của các phép toán tử khi sử dụng.
+5. Cấu trúc điều kiện
+
+Câu lệnh điều kiện đưa ra quyết đinh trong chương trình. Tùy thuộc vào giá trị kiểm tra của biểu thức điều kiện mà chương trình có thể thực thi các câu lệnh khác nhau. Trong nhiều trường hợp có thể sử dụng câu lệnh swich để thay thế câu lệnh if để tăng hiệu quả cho chương trình.
+Cú pháp khai báo câu lệnh if: if (Biểu_thức_điều_kiện) { }
+Cú pháp khai báo câu lệnh switch: switch (Biểu_thức) { case 1: break; ... default: break; }
+6. Cấu trúc vòng lặp
+
+Các vòng lặp kiểm tra điều kiện trước khi chạy (pre-test) là for và while. Chúng có thể được cấu hình để chạy phần thân vòng lặp một lần, nhiều lần hoặc không lần nào cả tùy vào yêu cầu bài toán và mức độ hiểu quả để sử dụng.
+Cú pháp khai báo câu lệnh for: for (Biểu_thức_1; Biểu_thức_2; Biểu_thức_3) { }
+Cú pháp khai báo câu lệnh while: while (Biểu_thức_điều_kiện) { }
+Vòng lặp do while khác một chút vì chúng luôn thực hiện câu lệnh ít nhất một lần và do đó được gọi là vòng lặp kiểm tra điều kiện sau khi chạy (post-test)
+Cú pháp khai báo câu lệnh do while: do { } while (Biểu_thức_điều_kiện);
+7. Mảng
+
+Mảng là một tập hợp các phần tử cố định có cùng một kiểu, được lưu trữ liên tiếp nhau trong các ô nhớ. Kiểu phần tử có thể là có các kiểu bất kỳ: như ký tự, số, chuỗi ký tự …
+Cách khởi tạo một mảng và sử dụng trong chương trình.
+Mảng đa chiều chính là ma trận hoặc bảng tính chứa các hàng và các cột khác nhau, cho phép lưu trữ dữ liệu một cách đa dạng. 
+Độ dài của mảng và một số lưu ý khi tạo mảng.
+8. Hàm
+
+Hàm giúp cho chương trình của bạn giảm thiểu việc trùng lặp các câu lệnh, quản lý chương trình của bạn theo từng khối (module) dễ quản lý, gỡ lỗi và nâng cấp.
+Đảm bảo hàm chỉ thực hiện một nhiệm vụ, chức năng riêng biệt. Ví dụ viết hàm add để cộng hai số nguyên a và b thì hàm này chỉ có đầu vào (input) là hai số nguyên a, b và đầu ra (output) sẽ là kết quả của phép cộng, không có bất kỳ thao tác ngoài lệ nào bên trong hàm này như hiển thị số ra màn hình ...
+Cách khai báo hàm với giá trị truyền vào hoặc có giá trị trả về
+Sử dụng biến cục bộ và biến toàn cục trong hàm.
+9. Chuỗi ký tự
+
+Chuối ký tự là một tập hợp các ký tự (char) được lưu trữ trên các ô nhớ liên tiếp và luôn kết thúc bằng một ký tự NULL '\0'.
+Cách khai báo và sử dụng chuỗi ký tự trong chương trình.
+Sử dụng một số hàm xử lý chuỗi phổ biến trong thư viện string.h.
+Các kỹ thuật xử lý chuỗi nâng cao bao gồm tìm kiếm, tokenizing và kiểm tra chuỗi ký tự.
+10. Con trỏ
+
+Con trỏ là một công cụ hiệu quả giúp tăng hiệu suất của chương trình và thực tế nhiều tác vụ không thể thực hiện được nếu như không sử dụng con trỏ. Con trỏ được dùng để trỏ tới tới địa chỉ trên bộ nhớ nơi được dùng để lưu trữ giá trị của biến. Một biến con trỏ sau khi khai báo nó sẽ có bốn thuộc tính là tên biến, kiểu dữ liệu, giá trị hiện tại của biến, địa chỉ trên bộ nhớ nơi lưu trữ giá trị của biến.
+Cách khai báo và sử dụng con trỏ trong chương trình.
+Hiểu và sử dụng con trỏ void.
+Phân biệt kiểu dữ liệu con trỏ hằng và hằng con trỏ.
+Hiểu mối quan hệ giữa con trỏ và kiểu dữ liệu mảng, chuỗi ký tự.
+Biết cách kết hợp con trỏ với kiểu dữ liệu hằng, mảng và chuỗi ký tự.
+11. Cấu trúc
+
+Cấu trúc giống như mảng nhưng tối ưu hơn mảng vì nó cho phép bạn nhóm các phần tử cụ thể với các kiểu dữ liệu khác nhau với tên cụ thể.
+Cách khai báo và sử dụng kiểu cấu trúc với từ khóa typedef.
+Cấu trúc lồng chứa các cấu trúc khác nhau, giống như một đối tượng bao gồm nhiều thuộc tính, chức năng khác nhau ...
+Biết cách kết hợp kiểu cấu trúc với các kiểu dữ liệu khác như con trỏ, mảng và hàm.
+12. Làm việc với File
+
+File là kiểu đối tượng, nó xác định một luồng dữ liệu (stream) và chứa các thông tin cần thiết để điều khiển, bao gồm một con trỏ trỏ đến buffer của nó, các chỉ mục và trạng thái của nó. Chúng ta có thể thao tác với dữ liệu được lưu trữ bên trong File bằng các câu lệnh có sẵn trong thư viện stdlib.h.
+Biết cách thao tác đọc và ghi dữ liệu với tệp tin trên bộ nhớ lưu trữ.
+13. Một số thư viện trong ngôn ngữ C
+
+Thư viện C chuẩn (C Standard Library) là một tập hợp các hàm, hằng và header file như <stdio.h>, <stdlib.h>, <math.h>, <string.h> ... đã được xây dựng sẵn. Để sử dụng các hàm, hằng hay các macro đã được xây dựng sẵn trong ngôn ngữ C, bạn cần phải khai báo các header file này ở phần đầu chương trình của bạn.
+Không nên phụ thuộc vào thư viện có sẵn trong ngôn ngữ C, nếu đơn giản bạn có thể tự viết chương trình để tối ưu code và dễ dàng quản lý với những ứng dụng đơn giản, không đòi hỏi bộ nhớ nhiều.
