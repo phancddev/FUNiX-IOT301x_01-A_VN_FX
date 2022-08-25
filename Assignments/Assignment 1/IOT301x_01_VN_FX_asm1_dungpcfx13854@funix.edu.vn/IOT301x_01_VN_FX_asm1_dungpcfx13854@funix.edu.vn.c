@@ -5,6 +5,7 @@
 #define cach "\n------------------------------------\n\n "
 #define htd "Xin vui long nhap toa do diem"
 #define PI 3.14159265
+
 float toaDo[6];
 float canhGoc[6];
 float duongCao[3];
@@ -57,6 +58,7 @@ canhGoc[2] = sqrt((toaDo[2] - toaDo[4]) * (toaDo[2] - toaDo[4]) + (toaDo[3] - to
 
 
 }
+
 void xet_tamgiac()
 {
   // Xet tam giac tao duoc tu toa do la tam giac gi
@@ -140,23 +142,19 @@ void tam_tamgiac()
   printf("Toa do trong tam: [%.2f, %.2f]", g, h);
 }
 
-//Ham xet tam giac
-
-
-void trungtuyen_tamgiac()
+void incanh()
 {
-  // Tinh do dai trung tuyen
-  trungTuyen[0] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[2] * canhGoc[2]) / 4);
-  trungTuyen[1] = sqrt((canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[1] * canhGoc[1]) / 4);
-  trungTuyen[2] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[2] * canhGoc[2]) / 2 - (canhGoc[0] * canhGoc[0]) / 4);
-  printf("Do dai trung tuyen tu dinh A la: %.2f \n", trungTuyen[0]);
-  printf("Do dai trung tuyen tu dinh B la: %.2f\n", trungTuyen[1]);
-  printf("Do dai trung tuyen tu dinh C la: %.2f\n", trungTuyen[2]);
+  printf(cach);
+  printf("1. Cac so do co ban cua tam giac:\n");
+  printf("Chieu dai cua canh AB la: %.2f \n", canh_goc[0]);
+  printf("Chieu dai cua canh BC la: %.2f \n", canh_goc[2]);
+  printf("Chieu dai cua canh AC la: %.2f \n", canh_goc[1]);
 }
-// int main()
-// {
-//     return 0;
-// }
+
+
+
+
+
 void inketqua()
 {
   incanh();
