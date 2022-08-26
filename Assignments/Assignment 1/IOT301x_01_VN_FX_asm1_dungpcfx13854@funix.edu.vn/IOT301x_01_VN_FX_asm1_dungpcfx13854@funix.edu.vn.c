@@ -135,8 +135,8 @@ void trungtuyen_tamgiac()
 void tam_tamgiac()
 {
   // Tinh toa do trong tam
-  float g = (htd[0] + htd[2] + htd[4]) / 3;
-  float h = (htd[1] + htd[3] + htd[5]) / 3;
+  float g = (toaDo[0] + toaDo[2] + toaDo[4]) / 3;
+  float h = (toaDo[1] + toaDo[3] + toaDo[5]) / 3;
 
   printf(cach "4. Toa do diem dac biet cua tam giac ABC:\n");
   printf("Toa do trong tam: [%.2f, %.2f]", g, h);
@@ -146,9 +146,9 @@ void incanh()
 {
   printf(cach);
   printf("1. Cac so do co ban cua tam giac:\n");
-  printf("Chieu dai cua canh AB la: %.2f \n", canh_goc[0]);
-  printf("Chieu dai cua canh BC la: %.2f \n", canh_goc[2]);
-  printf("Chieu dai cua canh AC la: %.2f \n", canh_goc[1]);
+  printf("Chieu dai cua canh AB la: %.2f \n", canhGoc[0]);
+  printf("Chieu dai cua canh BC la: %.2f \n", canhGoc[2]);
+  printf("Chieu dai cua canh AC la: %.2f \n", canhGoc[1]);
 }
 
 
