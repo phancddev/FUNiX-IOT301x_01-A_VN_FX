@@ -14,12 +14,12 @@ printf("%d %d \n",count, b);
 
 // int c;
 // int d = 0;
-// int countt;
+// int countrungTuyen;
 // for (c = 0; c < 10; ++c) 
 // {
-//     countt = ++d;
+//     countrungTuyen = ++d;
 
-//     printf("%d \n",countt);
+//     printf("%d \n",countrungTuyen);
 // }
     return 0;
 }

@@ -21,15 +21,15 @@ void duongcao_tamgiac() {
 
     // Ap dung cong thuc heron, tinh do dai cua duong cao tam giac (duongCao)
     duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[2]);
-    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[1]);
-    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[0]);
+    duongCao[1] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[1]);
+    duongCao[2] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[0]);
 
     //Print 
-    printf(cach);
-    printf("3. So do nang cao tam giac ABC: \n");
-    printf("Do dai duong cao tu dinh A la: %.2f ", duongCao[0]); //%.2f có nghĩa là lấy 2 số lẻ sau dấu”.” ví dụ: 1.65 hay 1.74
-    printf("Do dai duong cao tu dinh B la: %.2f ", duongCao[1]); 
-    printf("Do dai duong cao tu dinh B la: %.2f ", duongCao[2]); 
+   
+    printf(cach "3. So do nang cao tam giac ABC: \n");
+    printf("Do dai duong cao tu dinh A la: %.2f \n", duongCao[0]); //%.2f có nghĩa là lấy 2 số lẻ sau dấu”.” ví dụ: 1.65 hay 1.74
+    printf("Do dai duong cao tu dinh B la: %.2f \n", duongCao[1]); 
+    printf("Do dai duong cao tu dinh B la: %.2f \n", duongCao[2]); 
     
     }
 
@@ -38,7 +38,7 @@ void duongcao_tamgiac() {
 void dientich_tamgiac() {
     p = (canhGoc[2] + canhGoc[1] + canhGoc[0]) / 2;
 
-    //Ap dung cong thuc Heron, tinh dient tich
+    //Ap dung cong thuc Heron, tinh dien tich
 
     float s = sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0]));
     printf(cach);
@@ -129,8 +129,8 @@ void trungtuyen_tamgiac()
   trungTuyen[1] = sqrt((canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[1] * canhGoc[1]) / 4);
   trungTuyen[2] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[2] * canhGoc[2]) / 2 - (canhGoc[0] * canhGoc[0]) / 4);
   printf("Do dai trung tuyen tu dinh A la: %.2f \n", trungTuyen[0]);
-  printf("Do dai trung tuyen tu dinh B la: %.2f\n", trungTuyen[1]);
-  printf("Do dai trung tuyen tu dinh C la: %.2f\n", trungTuyen[2]);
+  printf("Do dai trung tuyen tu dinh B la: %.2f \n", trungTuyen[1]);
+  printf("Do dai trung tuyen tu dinh C la: %.2f 1\n", trungTuyen[2]);
 }
 void tam_tamgiac()
 {

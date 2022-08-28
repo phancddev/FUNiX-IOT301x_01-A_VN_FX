@@ -11,9 +11,9 @@
     VD: double z
     + Enum: liệt kê tất cả các giá trị trong khi khai báo. Lưu ý là giá trị của kiểu liệt kê được tính thành số nguyên.
     VD: 
-    enum month {Jan, Feb, Mar, Apr = 10, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+    enum month {Jan, Feb, Mar, Apr = 10, May, Jun, Jul, Aug, cach, Oct, Nov, Dec};
     enum month thisMonth;
-    thisMonth = Sep;
+    thisMonth = cach;
     printf("%d \n", thisMonth);
 
 - Thêm long vào trước 1 kiểu dữ liệu để gấp đôi kích thước. 
@@ -122,7 +122,7 @@ Hàm strstr()
     strstr(s1, s2);
     => Hàm trả kết quả cdefghi
 
-    strstr(filestr, pattern); // Tra ve dia chi cua pattern trong filestr.
+    strstr(filestr, patrungTuyenern); // Tra ve dia chi cua patrungTuyenern trong filestr.
 Hàm strrev()
 - Dùng để đảo ngược trật tự của chuỗi
 - Trả về kết quả là chuỗi đã đảo ngược
