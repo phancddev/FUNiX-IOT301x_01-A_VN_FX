@@ -2,6 +2,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <stdbool.h>
 #define cach "\n------------------------------------\n\n "
 #define htd "Xin vui long nhap toa do diem"
 #define PI 3.14159265
@@ -145,6 +146,8 @@ void tam_tamgiac()
 void incanh()
 {
   printf(cach);
+   //In canh
+  
   printf("1. Cac so do co ban cua tam giac:\n");
   printf("Chieu dai cua canh AB la: %.2f \n", canhGoc[0]);
   printf("Chieu dai cua canh BC la: %.2f \n", canhGoc[2]);
@@ -152,13 +155,16 @@ void incanh()
 }
 
 
-
+void goccanh_tamgiac() {
+incanh();
+ingoc();
+  
+}
 
 
 void giaima_tamgiac()
 {
-  incanh();
-  ingoc();
+goccanh_tamgiac();
   xet_tamgiac();
   dientich_tamgiac();
   duongcao_tamgiac();
@@ -170,9 +176,9 @@ int check_tamgiac()
   tinhcanh();
   if (canhGoc[2] + canhGoc[1] > canhGoc[0] && canhGoc[2] + canhGoc[0] > canhGoc[1] && canhGoc[1] + canhGoc[0] > canhGoc[2])
   {
-    return 1;
+    return false;
   }
-  return 0;
+  return true;
 }
 int main()
 {
