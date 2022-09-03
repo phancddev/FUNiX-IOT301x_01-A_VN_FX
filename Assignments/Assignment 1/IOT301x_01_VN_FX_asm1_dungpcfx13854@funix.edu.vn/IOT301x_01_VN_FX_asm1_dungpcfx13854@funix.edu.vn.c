@@ -16,20 +16,20 @@ float p; //Chu vi
 // Ham tinh  duong cao tam giac 
 void duongcao_tamgiac() {
     //Tinh nua chu vi
-    p = canhGoc[0] + canhGoc[1] + canhGoc[2] / 2; 
+    p = (canhGoc[0] + canhGoc[1] + canhGoc[2]) / 2; 
 
 
     // Ap dung cong thuc heron, tinh do dai cua duong cao tam giac (duongCao)
-    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[2]);
-    duongCao[1] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[1]);
-    duongCao[2] = ((2 * (sqrt(p * (p - canhGoc[0]) * (p - canhGoc[1]) * (p - canhGoc[2])))) / canhGoc[0]);
+    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[2]);
+    duongCao[1] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[1]);
+    duongCao[2] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[0]);
 
     //Print 
    
     printf(cach "3. So do nang cao tam giac ABC: \n");
     printf("Do dai duong cao tu dinh A la: %.2f \n", duongCao[0]); //%.2f có nghĩa là lấy 2 số lẻ sau dấu”.” ví dụ: 1.65 hay 1.74
     printf("Do dai duong cao tu dinh B la: %.2f \n", duongCao[1]); 
-    printf("Do dai duong cao tu dinh B la: %.2f \n", duongCao[2]); 
+    printf("Do dai duong cao tu dinh C la: %.2f \n", duongCao[2]); 
     
     }
 
@@ -42,7 +42,7 @@ void dientich_tamgiac() {
 
     float s = sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0]));
     printf(cach);
-    printf("2. Dien tich tam giac la: %2.f", s);
+    printf("2. Dien tich tam giac la: %.2f \n", s);
  
 }
 
@@ -130,7 +130,7 @@ void trungtuyen_tamgiac()
   trungTuyen[2] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[2] * canhGoc[2]) / 2 - (canhGoc[0] * canhGoc[0]) / 4);
   printf("Do dai trung tuyen tu dinh A la: %.2f \n", trungTuyen[0]);
   printf("Do dai trung tuyen tu dinh B la: %.2f \n", trungTuyen[1]);
-  printf("Do dai trung tuyen tu dinh C la: %.2f 1\n", trungTuyen[2]);
+  printf("Do dai trung tuyen tu dinh C la: %.2f \n", trungTuyen[2]);
 }
 void tam_tamgiac()
 {
@@ -155,7 +155,7 @@ void incanh()
 
 
 
-void inketqua()
+void giaima_tamgiac()
 {
   incanh();
   ingoc();
@@ -201,5 +201,5 @@ int main()
     }
   } while (!(check_tamgiac(toaDo[0], toaDo[1], toaDo[2], toaDo[3], toaDo[4], toaDo[5])));
   printf(cach "Toa do 3 diem da nhap tao thanh 1 tam giac \n");
-  inketqua(); // Ham in ket qua tu cac ham phu
+  giaima_tamgiac(); // Ham in ket qua tu cac ham phu
 }
