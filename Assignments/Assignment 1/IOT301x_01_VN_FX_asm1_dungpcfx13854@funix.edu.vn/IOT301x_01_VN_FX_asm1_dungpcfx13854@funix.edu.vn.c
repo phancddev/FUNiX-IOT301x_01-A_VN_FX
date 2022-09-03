@@ -165,11 +165,11 @@ ingoc();
 void giaima_tamgiac()
 {
 goccanh_tamgiac();
-  xet_tamgiac();
-  dientich_tamgiac();
-  duongcao_tamgiac();
-  trungtuyen_tamgiac();
-  tam_tamgiac();
+xet_tamgiac();
+dientich_tamgiac();
+duongcao_tamgiac();
+trungtuyen_tamgiac();
+tam_tamgiac();
 }
 int check_tamgiac()
 {
