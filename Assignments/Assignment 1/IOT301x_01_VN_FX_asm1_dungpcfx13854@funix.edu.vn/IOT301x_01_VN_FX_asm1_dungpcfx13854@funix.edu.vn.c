@@ -3,7 +3,7 @@
 #include <math.h>
 #include <ctype.h>
 #include <stdbool.h>
-#define cach "\n------------------------------------\n\n "
+#define cach "\n------------------------------------\n"
 #define htd "Xin vui long nhap toa do diem"
 #define PI 3.14159265
 
@@ -111,7 +111,7 @@ void xet_tamgiac()
   else
     printf("Tam giac nhon\n");
 }
-void ingoc() {
+void tinhgoc() {
       // Tinh goc tu canh
   float cosA = (canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0] - canhGoc[2] * canhGoc[2]) / (2 * canhGoc[0] * canhGoc[1]);
   float cosB = (canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0] - canhGoc[1] * canhGoc[1]) / (2 * canhGoc[0] * canhGoc[2]);
@@ -119,9 +119,7 @@ void ingoc() {
   canhGoc[3] = acos(cosA) * 180 / PI;
   canhGoc[4] = acos(cosB) * 180 / PI;
   canhGoc[5] = acos(cosC) * 180 / PI;
-  printf("So do goc B la: %.2f \n", canhGoc[4]);
-  printf("So do goc C la: %.2f \n", canhGoc[5]);
-  printf("So do goc A la: %.2f \n", canhGoc[3]);
+
 }
 void trungtuyen_tamgiac()
 {
@@ -138,13 +136,20 @@ void tam_tamgiac()
   // Tinh toa do trong tam
   float g = (toaDo[0] + toaDo[2] + toaDo[4]) / 3;
   float h = (toaDo[1] + toaDo[3] + toaDo[5]) / 3;
-
-  printf(cach "4. Toa do diem dac biet cua tam giac ABC:\n");
+  printf(cach);
+  printf( "4. Toa do diem dac biet cua tam giac ABC:\n");
   printf("Toa do trong tam: [%.2f, %.2f]", g, h);
 }
 
-void incanh()
-{
+
+
+
+void goccanh_tamgiac() {
+
+  //Goi ham tinh canh
+tinhcanh();
+
+// In canh
   printf(cach);
    //In canh
   
@@ -152,12 +157,14 @@ void incanh()
   printf("Chieu dai cua canh AB la: %.2f \n", canhGoc[0]);
   printf("Chieu dai cua canh BC la: %.2f \n", canhGoc[2]);
   printf("Chieu dai cua canh AC la: %.2f \n", canhGoc[1]);
-}
 
+//Goi ham tinhgoc
+tinhgoc();
 
-void goccanh_tamgiac() {
-incanh();
-ingoc();
+//In goc
+  printf("So do goc B la: %.2f \n", canhGoc[4]);
+  printf("So do goc C la: %.2f \n", canhGoc[5]);
+  printf("So do goc A la: %.2f \n", canhGoc[3]);
   
 }
 
@@ -176,9 +183,9 @@ int check_tamgiac()
   tinhcanh();
   if (canhGoc[2] + canhGoc[1] > canhGoc[0] && canhGoc[2] + canhGoc[0] > canhGoc[1] && canhGoc[1] + canhGoc[0] > canhGoc[2])
   {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 int main()
 {
