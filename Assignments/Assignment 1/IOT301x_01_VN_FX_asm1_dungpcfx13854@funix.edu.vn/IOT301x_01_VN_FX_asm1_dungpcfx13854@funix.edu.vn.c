@@ -205,9 +205,9 @@ int main()
     printf(htd " cua diem C - Cy: ");
     scanf("%f", &toaDo[5]);
     printf(cach);
-    printf("Toa do diem A da nhap: A(%.2f; %.2f) \n", toaDo[0], toaDo[1]);
-    printf("Toa do diem B da nhap: B(%.2f; %.2f) \n", toaDo[2], toaDo[3]);
-    printf("Toa do diem C da nhap: C(%.2f; %.2f) \n", toaDo[4], toaDo[5]);
+    printf("Toa do diem A da nhap: A(%.2f, %.2f) \n", toaDo[0], toaDo[1]);
+    printf("Toa do diem B da nhap: B(%.2f, %.2f) \n", toaDo[2], toaDo[3]);
+    printf("Toa do diem C da nhap: C(%.2f, %.2f) \n", toaDo[4], toaDo[5]);
     if (!(check_tamgiac(toaDo[0], toaDo[1], toaDo[2], toaDo[3], toaDo[4], toaDo[5]))) // Neu gia tri tinh duoc cua cac toa do khong bang ham check_tamgiac => khong phai 1 tam giac
     {
       printf(cach "Toa do 3 diem da nhap khong hop thanh 1 tam giac \nXin vui long nhap lai toa do \n"); // Lap lai cac buoc den khi duoc 1 tam giac
