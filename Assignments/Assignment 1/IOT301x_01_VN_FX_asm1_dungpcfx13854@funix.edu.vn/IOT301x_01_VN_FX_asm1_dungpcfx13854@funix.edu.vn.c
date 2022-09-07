@@ -19,8 +19,8 @@ void duongcao_tamgiac() {
     //Tinh nua chu vi
     p = (canhGoc[0] + canhGoc[1] + canhGoc[2]) / 2; 
     // Ap dung cong thuc heron, tinh do dai cua duong cao tam giac (duongCao)
-    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[2]);
-    duongCao[1] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[1]);
+    duongCao[0] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[1]);
+    duongCao[1] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[2]);
     duongCao[2] = ((2 * (sqrt(p * (p - canhGoc[2]) * (p - canhGoc[1]) * (p - canhGoc[0])))) / canhGoc[0]);
     //Print 
     printf(cach "3. So do nang cao tam giac ABC: \n");
@@ -40,9 +40,9 @@ void dientich_tamgiac() {
  
 void tinhcanh() {
     // Tinh canh tu toa do da nhap vao
-    canhGoc[1] = sqrt((toaDo[0] - toaDo[4]) * (toaDo[0] - toaDo[4]) + (toaDo[1] - toaDo[5]) * (toaDo[1] - toaDo[5]));
-    canhGoc[2] = sqrt((toaDo[2] - toaDo[4]) * (toaDo[2] - toaDo[4]) + (toaDo[3] - toaDo[5]) * (toaDo[3] - toaDo[5]));
     canhGoc[0] = sqrt((toaDo[0] - toaDo[2]) * (toaDo[0] - toaDo[2]) + (toaDo[1] - toaDo[3]) * (toaDo[1] - toaDo[3]));
+    canhGoc[1] = sqrt((toaDo[2] - toaDo[4]) * (toaDo[2] - toaDo[4]) + (toaDo[3] - toaDo[5]) * (toaDo[3] - toaDo[5]));
+    canhGoc[2] = sqrt((toaDo[0] - toaDo[4]) * (toaDo[0] - toaDo[4]) + (toaDo[1] - toaDo[5]) * (toaDo[1] - toaDo[5]));
 }
  
 void xet_tamgiac()
@@ -99,8 +99,8 @@ void xet_tamgiac()
  
 void tinhgoc() {
   // Tinh goc tu canh
-  float cosA = (canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0] - canhGoc[2] * canhGoc[2]) / (2 * canhGoc[0] * canhGoc[1]);
-  float cosB = (canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0] - canhGoc[1] * canhGoc[1]) / (2 * canhGoc[0] * canhGoc[2]);
+  float cosA = (canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0] - canhGoc[1] * canhGoc[1]) / (2 * canhGoc[0] * canhGoc[2]);
+  float cosB = (canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0] - canhGoc[2] * canhGoc[2]) / (2 * canhGoc[0] * canhGoc[1]);
   float cosC = (canhGoc[2] * canhGoc[2] + canhGoc[1] * canhGoc[1] - canhGoc[0] * canhGoc[0]) / (2 * canhGoc[2] * canhGoc[1]);
   canhGoc[3] = acos(cosA) * 180 / PI;
   canhGoc[4] = acos(cosB) * 180 / PI;
@@ -110,8 +110,8 @@ void tinhgoc() {
 void trungtuyen_tamgiac()
 {
   // Tinh do dai trung tuyen
-  trungTuyen[0] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[2] * canhGoc[2]) / 4);
-  trungTuyen[1] = sqrt((canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[1] * canhGoc[1]) / 4);
+  trungTuyen[0] = sqrt((canhGoc[2] * canhGoc[2] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[1] * canhGoc[1]) / 4);
+  trungTuyen[1] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[0] * canhGoc[0]) / 2 - (canhGoc[2] * canhGoc[2]) / 4);
   trungTuyen[2] = sqrt((canhGoc[1] * canhGoc[1] + canhGoc[2] * canhGoc[2]) / 2 - (canhGoc[0] * canhGoc[0]) / 4);
   printf("Do dai trung tuyen tu dinh A la: %.2f \n", trungTuyen[0]);
   printf("Do dai trung tuyen tu dinh B la: %.2f \n", trungTuyen[1]);
@@ -136,14 +136,14 @@ void goccanh_tamgiac(){
     //In canh
     printf("1. Cac so do co ban cua tam giac:\n");
     printf("   Chieu dai canh AB la: %.2f \n", canhGoc[0]);
-    printf("   Chieu dai canh BC la: %.2f \n", canhGoc[2]);
-    printf("   Chieu dai canh CA la: %.2f \n", canhGoc[1]);
+    printf("   Chieu dai canh BC la: %.2f \n", canhGoc[1]);
+    printf("   Chieu dai canh CA la: %.2f \n", canhGoc[2]);
     //Goi ham tinhgoc
     tinhgoc();
     //In goc
-    printf("   Goc A: %.2f \n", canhGoc[4]);
-    printf("   Goc B: %.2f \n", canhGoc[5]);
-    printf("   Goc C: %.2f \n", canhGoc[3]);
+    printf("   Goc A: %.2f \n", canhGoc[3]);
+    printf("   Goc B: %.2f \n", canhGoc[4]);
+    printf("   Goc C: %.2f \n", canhGoc[5]);
 }
  
 bool kiemtra_tamgiac(){
