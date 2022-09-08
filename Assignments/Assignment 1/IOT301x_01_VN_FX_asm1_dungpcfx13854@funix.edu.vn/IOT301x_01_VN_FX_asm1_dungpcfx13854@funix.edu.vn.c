@@ -49,11 +49,11 @@ void xet_tamgiac()
 {
   // Xet tam giac tao duoc tu toa do la tam giac gi
   char dacTinh[4]; // Vuong, tu, can, deu
-  if ((canhGoc[3] - 90.0f < 0.000001f) && (canhGoc[3] - 90.0f >= 0.0f) || (canhGoc[3] - 90.0f > -0.000001f) && (canhGoc[3] - 90.0f <= 0.0f))
+  if (fabs(canhGoc[3] - 90) <= 0.000001f)
     dacTinh[0] = 'A';
-  else if ((canhGoc[4] - 90.0f < 0.000001f) && (canhGoc[4] - 90.0f >= 0.0f) || (canhGoc[4] - 90.0f > -0.000001f) && (canhGoc[4] - 90.0f <= 0.0f))
+  else if (fabs(canhGoc[4] - 90) <= 0.000001f)
     dacTinh[0] = 'B';
-  else if ((canhGoc[5] - 90.0f < 0.000001f) && (canhGoc[5] - 90.0f >= 0.0f) || (canhGoc[5] - 90.0f > -0.000001f) && (canhGoc[5] - 90.0f <= 0.0f))
+  else if (fabs(canhGoc[5] - 90) <= 0.000001f)
     dacTinh[0] = 'C';
   else
     dacTinh[0] = '0';
