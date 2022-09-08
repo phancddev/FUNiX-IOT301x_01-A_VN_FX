@@ -173,7 +173,7 @@ bool giaima_tamgiac()
 }
 
 void main(){
-    do{
+    while(1){
         printf(cach);
         printf(htd " cua diem A - Ax: ");
         scanf("%f", &toaDo[0]);
@@ -194,5 +194,7 @@ void main(){
         printf("Toa do diem C da nhap: C(%.2f, %.2f) \n", toaDo[4], toaDo[5]);
         if(!giaima_tamgiac())
             printf(cach "Toa do 3 diem da nhap khong hop thanh 1 tam giac \nXin vui long nhap lai toa do \n"); // Lap lai cac buoc den khi duoc 1 tam giac
-    }while(!giaima_tamgiac());
+    else
+         break;
+}
 }
